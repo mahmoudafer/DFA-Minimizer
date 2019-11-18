@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     background-color: #bbb;
     margin: 0;
@@ -34,3 +35,41 @@ input[type=radio] {
 ::selection {
     background: transparent;
 }
+=======
+body {
+    background-color: #bbb;
+    margin: 0;
+}
+
+#labelInput {
+    width: 15vw;
+    text-align: center;
+    margin: 0.75% auto 0 auto;
+    border-radius: 2px;
+    border-width: 0;
+    background-color: #007FFF;
+    color: white;
+}
+
+#labelInput::placeholder {
+    color: white;
+}
+
+#canvas {
+    margin: 0.75% auto 0 auto;
+    background-color: black;
+    height: 90vh;
+    width: 90vw;
+    border: 1px black solid;
+    border-radius: .5em;
+    box-shadow: 0 0 4px black;
+}
+
+input[type=radio] {
+    margin: 0;
+}
+
+::selection {
+    background: transparent;
+}
+>>>>>>> 79b206c6753aa30c738458cb98f876e052726185
