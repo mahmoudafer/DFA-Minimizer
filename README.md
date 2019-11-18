@@ -5,4 +5,5 @@ start drawing and minimizing DFAs!
 # How To Use
 The "new label" text input is for naming the states/nodes and edges/transitions
 
+**Adding states**
 Type in "new label" input the name of the first state e.g: "S1" then **double click** anywhere on the canvas to add that state.
