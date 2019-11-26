@@ -1,9 +1,10 @@
 const readline = require('readline')
 
-const node = (height, id, final = false) => {
+const Node = (id, parent, final = false) => {
     return {
-        height,
+        height: -1,
 		id,
+		parent,
 		final,
 		alphabets: {}
     }
@@ -12,20 +13,21 @@ const node = (height, id, final = false) => {
 class dafsa {
     constructor () {
         this.id = 1
-        this.head = node(-1, 0)
+		this.head = Node(-1, 0)
 	}
 
 	insertString (str) {
 		let i, current = this.head
 		for (i = 0; i < str.length - 1; i++) {
-			current = this.insertLetter(str.charAt(i), current)
+			current = this.insertLetter(str.charAt(i), current, false)
 		}
 		this.insertLetter(str.charAt(i), current, true)
 	}
 	
 	insertLetter (letter, current, final) {
 		if (!current.alphabets[letter]) {
-			current.alphabets[letter] = node(current.height - 1, this.id, final)
+			const node = Node(this.id, current, final)
+			current.alphabets[letter] = node
 			this.id++
 		}
 		return current.alphabets[letter]
