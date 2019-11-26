@@ -1,0 +1,23 @@
+{
+  "name": "dafsa",
+  "version": "1.0.0",
+  "description": "Deterministic Acyclic Finite State Automata",
+  "main": "dafsa.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dafsa",
+    "DAFSA",
+    "automata",
+    "FMS",
+    "finite",
+    "state",
+    "machine"
+  ],
+  "author": "mahmoudafer",
+  "license": "ISC",
+  "dependencies": {
+    "lodash.pick": "^4.4.0"
+  }
+}
