@@ -107,6 +107,6 @@ rl.on('line', (input) => {
 	if (input == "min") return dafsaInst.minimize()
 	if (input == "print") return dafsaInst.print()
 	if (input.startsWith("test"))
-		console.log(input.substr(5, input.length) + (dafsaInst.test(input.substr(5, input.length)) ? " is recognised" : " is NOT recognised"))
+		return console.log(input.substr(5, input.length) + (dafsaInst.test(input.substr(5, input.length)) ? " is recognised" : " is NOT recognised"))
 	input !== "" && dafsaInst.insertString(input)
 })
