@@ -38,9 +38,15 @@ sigma.classes.graph.attach('addNode', 'incrementIDAndRefresh', () => {
 
 sigma.classes.graph.attach('addEdge', 'incrementIDAndMergeAndRefresh', (data) => {
 	ID++
+	const edgesRelated = []
 	if (data.source === data.target && data.type !== "curvedArrow")
 		s.graph.edges(data.id).type = "curvedArrow"
-	const edgesRelated = s.graph.edges().filter(edge => edge.source === data.source && edge.target === data.target && edge.label)
+	s.graph.edges().forEach(edge => {
+		if (edge.target == data.source && edge.source == data.target)
+			edge.type = "curvedArrow"
+		if (edge.source === data.source && edge.target === data.target && edge.label)
+			edgesRelated.push(edge)
+	})
 	let i = edgesRelated.length - 1
 	while (i > 0) {
 		s.graph.edges(edgesRelated[0].id).label += ", " + s.graph.edges(edgesRelated[i].id).label

@@ -38,7 +38,7 @@ class dafsa {
 	minimize () {
 		let leafNodes = this.getLeafNodes(), leafNodesParents, newHeight = 0, newId = 1, nodeKeys
 		while (this.head.height == -1) {
-			leafNodesParents = [...new Set(leafNodes.map(node => node.parent))] //remove duplicates
+			leafNodesParents = [...new Set(leafNodes.map(node => node.parent))]
 			for (let i = 0; i < leafNodes.length; i++) {
 				for (let j = i + 1; j < leafNodes.length; j++) {
 					if (leafNodes[i].final == leafNodes[j].final && isEqual(leafNodes[i].alphabets, leafNodes[j].alphabets)) {
