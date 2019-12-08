@@ -27,8 +27,22 @@ body {
     box-shadow: 0 0 4px black;
 }
 
-input[type=radio] {
-    margin: 0;
+#button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+
+#minimize {
+    background-color: #007FFF;
+    border: 0;
+    color: white;
+    border-radius: 3px;
+}
+
+#minimize:hover {
+    background-color: #aa99BB;
 }
 
 ::selection {
