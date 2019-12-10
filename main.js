@@ -43,7 +43,7 @@ sigma.classes.graph.attach('addEdge', 'incrementIDAndMergeAndRefresh', (data) =>
 		s.graph.edges(data.id).type = "curvedArrow"
 	s.graph.edges().forEach(edge => {
 		if (edge.target == data.source && edge.source == data.target)
-			edge.type = "curvedArrow"
+			s.graph.edges(data.id).type = "curvedArrow"
 		if (edge.source === data.source && edge.target === data.target && edge.label)
 			edgesRelated.push(edge)
 	})
@@ -129,7 +129,7 @@ function updateEdgesType() {
 	s.refresh()
 }
 
-const removeUnreachableStates = () => { //breadth-first traversal
+const removeUnreachableStates = () => {
 	let edges = s.graph.edges(),
 		passed = {
 			"-2": true
