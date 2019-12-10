@@ -42,14 +42,17 @@ sigma.classes.graph.attach('addEdge', 'incrementIDAndMergeAndRefresh', (data) =>
 	if (data.source === data.target && data.type !== "curvedArrow")
 		s.graph.edges(data.id).type = "curvedArrow"
 	s.graph.edges().forEach(edge => {
-		if (edge.target == data.source && edge.source == data.target)
+		if (edge.target == data.source && edge.source == data.target) {
 			s.graph.edges(data.id).type = "curvedArrow"
+			edge.type = "curvedArrow"
+		}
 		if (edge.source === data.source && edge.target === data.target && edge.label)
 			edgesRelated.push(edge)
 	})
 	let i = edgesRelated.length - 1
 	while (i > 0) {
-		s.graph.edges(edgesRelated[0].id).label += ", " + s.graph.edges(edgesRelated[i].id).label
+		if (edgesRelated.reduce((acc, current) => acc + (edgesRelated[i].label && edgesRelated[i].label === current.label ? 1 : 0), 0) < 2)
+			s.graph.edges(edgesRelated[0].id).label += ", " + s.graph.edges(edgesRelated[i].id).label
 		s.graph.edges(edgesRelated[i].id).label = null
 		i--
 	}
