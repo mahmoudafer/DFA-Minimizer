@@ -39,10 +39,11 @@ body {
     border: 0;
     color: white;
     border-radius: 3px;
+    transition: 0.3s;
 }
 
 #minimize:hover {
-    background-color: #aa99BB;
+    background-color: rgb(0, 8, 126);
 }
 
 ::selection {
