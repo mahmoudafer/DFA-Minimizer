@@ -22,4 +22,4 @@ Type in `new label` input the name of the input e.g: `1`, **hold** `Ctrl/cmd`, *
 
 **Deleting a State**
 
-**Hold** `Ctrl/cmd` key and **right click** the state that you want to make final
+**Hold** `Ctrl/cmd` key and **right click** the state that you want to delete
