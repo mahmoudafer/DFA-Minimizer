@@ -19,3 +19,7 @@ Type in `new label` input the name of the input e.g: `1`, **hold** `Ctrl/cmd`, *
 **Making a State Final**
 
 **Hold** `Alt` key and **double click** the state that you want to make final
+
+**Deleting a State**
+
+**Hold** `Ctrl/cmd` key and **right click** the state that you want to make final
